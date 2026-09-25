@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NorthStar Plumbing — 24-Hour Plumber in Burnaby, BC</title>
+<meta name="description" content="NorthStar Plumbing is Burnaby's 24-hour emergency plumber. Drain and sewer service, leak repair, water heaters, and general plumbing. 5.0 stars, 43 reviews. Call (250) 816-4277.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔧</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F6F3EC;
+    --paper-raised: #FFFFFF;
+    --ink: #1C2430;
+    --ink-soft: #4B5563;
+    --copper: #B5651D;
+    --copper-deep: #8F4E15;
+    --steel: #46617E;
+    --line: rgba(28,36,48,0.12);
+    --radius: 14px;
+    color-scheme: light;
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --paper: #12161D;
+      --paper-raised: #1A2029;
+      --ink: #EDEAE2;
+      --ink-soft: #B7BEC9;
+      --copper: #D17A34;
+      --copper-deep: #E08D48;
+      --steel: #8CA6BF;
+      --line: rgba(237,234,226,0.14);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #12161D;
+    --paper-raised: #1A2029;
+    --ink: #EDEAE2;
+    --ink-soft: #B7BEC9;
+    --copper: #D17A34;
+    --copper-deep: #E08D48;
+    --steel: #8CA6BF;
+    --line: rgba(237,234,226,0.14);
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: calc(76px + env(safe-area-inset-top, 0px)); }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Work Sans', system-ui, -apple-system, sans-serif;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: 'Bitter', Georgia, serif;
+    font-weight: 700;
+    line-height: 1.12;
+    margin: 0;
+    color: var(--ink);
+  }
+  a { color: inherit; }
+  img, svg { max-width: 100%; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  .overflow-scroll { overflow-x: auto; }
+
+  /* Header */
+  header.site {
+    position: sticky;
+    top: 0;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 20;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    max-width: 1120px;
+    margin: 0 auto;
+    gap: 16px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Bitter', serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+  .brand .mark {
+    width: 34px; height: 34px;
+    border-radius: 9px;
+    background: var(--copper);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .brand .mark svg { width: 19px; height: 19px; }
+  .call-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--copper);
+    color: #FFF9F2;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.15s ease;
+  }
+  .call-pill:hover { background: var(--copper-deep); }
+  .call-pill svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+  /* Hero */
+  .hero {
+    padding: 64px 0 48px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--steel);
+    border: 1px solid var(--line);
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+  }
+  .hero h1 {
+    font-size: clamp(34px, 4.4vw, 54px);
+    max-width: 15ch;
+  }
+  .hero .accent { color: var(--copper); }
+  .hero p.lede {
+    margin-top: 20px;
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 46ch;
+  }
+  .hero-ctas {
+    margin-top: 30px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 15px 26px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+  }
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--line);
+    color: var(--ink);
+    padding: 15px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+  }
+  .hero-art {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-art svg { width: 100%; height: auto; max-width: 360px; }
+
+  /* Trust bar */
+  .trust-bar {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 26px 0;
+  }
+  .trust-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .stars { display: flex; gap: 3px; }
+  .stars svg { width: 16px; height: 16px; fill: var(--copper); }
+  .trust-rating { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 15px; }
+  .trust-item { font-size: 14px; color: var(--ink-soft); }
+  .trust-items { display: flex; gap: 28px; flex-wrap: wrap; }
+
+  /* Sections */
+  section { padding: 76px 0; }
+  .section-head { max-width: 56ch; margin-bottom: 44px; }
+  .eyebrow {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--copper);
+    margin-bottom: 10px;
+  }
+  .section-head h2 { font-size: clamp(26px, 3vw, 36px); }
+  .section-head p { margin-top: 12px; color: var(--ink-soft); font-size: 16px; }
+
+  /* Services */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .service-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 26px;
+  }
+  .service-icon {
+    width: 42px; height: 42px;
+    border-radius: 10px;
+    background: rgba(181,101,29,0.12);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px;
+  }
+  .service-icon svg { width: 21px; height: 21px; stroke: var(--copper); }
+  .service-card h3 { font-size: 17px; margin-bottom: 8px; }
+  .service-card p { font-size: 14.5px; color: var(--ink-soft); margin: 0; }
+
+  /* Reviews */
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .review-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 24px;
+  }
+  .review-card .stars { margin-bottom: 14px; }
+  .review-card p.quote { font-size: 15px; color: var(--ink); margin: 0 0 16px; }
+  .review-card .who { font-size: 13.5px; color: var(--ink-soft); font-weight: 500; }
+
+  /* About / area */
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .about ul { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 14px; }
+  .about li { display: flex; gap: 12px; font-size: 15px; color: var(--ink-soft); }
+  .about li svg { width: 18px; height: 18px; stroke: var(--copper); flex-shrink: 0; margin-top: 2px; }
+  .about-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 30px;
+  }
+  .about-card .big-rating { font-family: 'Bitter', serif; font-size: 48px; font-weight: 700; }
+  .about-card .stars { margin: 10px 0 6px; }
+
+  /* CTA banner */
+  .cta-band {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 20px;
+    padding: 52px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .cta-band h2 { color: var(--paper); font-size: clamp(24px, 3vw, 32px); max-width: 20ch; }
+  .cta-band p { color: rgba(246,243,236,0.7); margin-top: 8px; }
+  .cta-band .call-pill { padding: 16px 28px; font-size: 16px; }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 44px 0 calc(36px + env(safe-area-inset-bottom, 0px));
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .footer-col h4 { font-size: 13px; text-transform: none; color: var(--ink-soft); margin: 0 0 10px; font-weight: 600; }
+  .footer-col div, .footer-col a { font-size: 14.5px; color: var(--ink); text-decoration: none; display: block; margin-bottom: 4px; }
+  .footer-credit { margin-top: 34px; font-size: 12.5px; color: var(--ink-soft); border-top: 1px solid var(--line); padding-top: 20px; }
+  .footer-credit a { color: var(--copper); text-decoration: none; font-weight: 600; }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; gap: 36px; padding-top: 40px; }
+    .hero-art { order: -1; }
+    .hero-art svg { max-width: 220px; }
+    .services-grid, .reviews-grid { grid-template-columns: 1fr; }
+    .about { grid-template-columns: 1fr; }
+    section { padding: 52px 0; }
+    .cta-band { padding: 36px 26px; }
+    .trust-inner { justify-content: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="header-inner">
+    <div class="brand">
+      <span class="mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#FFF9F2" stroke-width="2" stroke-linecap="round"><path d="M14 7l3 3-7 7-3-3z"/><path d="M17 4l3 3"/><path d="M5 19l1.5-4L9 17.5z"/></svg>
+      </span>
+      NorthStar Plumbing
+    </div>
+    <a class="call-pill" href="tel:12508164277">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      (250) 816-4277
+    </a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="hero" style="padding-top:64px;">
+      <div>
+        <span class="badge">Open 24 hours · Burnaby &amp; the Lower Mainland</span>
+        <h1>When a pipe bursts at 2&nbsp;AM, <span class="accent">we already have our boots on.</span></h1>
+        <p class="lede">NorthStar Plumbing handles drains, leaks, water heaters, and everything in between — fast, clean work from a team your Burnaby neighbours already trust.</p>
+        <div class="hero-ctas">
+          <a class="btn-primary" href="tel:12508164277">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Call (250) 816-4277
+          </a>
+          <a class="btn-secondary" href="#services">See our services</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 300 300" fill="none">
+          <circle cx="150" cy="150" r="148" stroke="var(--line)" stroke-width="1"/>
+          <path d="M70 100h60v40h-30v70" stroke="var(--copper)" stroke-width="10" stroke-linecap="round" fill="none"/>
+          <path d="M230 90v50h-50v70h40" stroke="var(--steel)" stroke-width="10" stroke-linecap="round" fill="none"/>
+          <circle cx="70" cy="100" r="9" fill="var(--copper)"/>
+          <circle cx="100" cy="210" r="9" fill="var(--copper)"/>
+          <circle cx="230" cy="90" r="9" fill="var(--steel)"/>
+          <circle cx="220" cy="210" r="9" fill="var(--steel)"/>
+        </svg>
+      </div>
+    </section>
+
+    <div class="trust-bar">
+      <div class="trust-inner">
+        <div class="trust-rating">
+          <span class="stars">
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          </span>
+          5.0 from 43 reviews on Google
+        </div>
+        <div class="trust-items">
+          <span class="trust-item">24/7 emergency calls</span>
+          <span class="trust-item">Serving Burnaby &amp; area</span>
+          <span class="trust-item">4723 Kingsway, Burnaby BC</span>
+        </div>
+      </div>
+    </div>
+
+    <section id="services">
+      <div class="section-head">
+        <div class="eyebrow">Services</div>
+        <h2>Plumbing done right, the first time.</h2>
+        <p>From a slow drain to a full water heater install, here's what we handle every week across Burnaby.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M4 6h16M4 12h10M4 18h13"/></svg></div>
+          <h3>Drain &amp; sewer service</h3>
+          <p>Clogged, slow, or blocked lines — cleared properly, not just pushed further down the pipe.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
+          <h3>Toilet repair &amp; install</h3>
+          <p>Running toilets, blockages, leaks, and full replacements — done clean, tested before we leave.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 2.5S6 10 6 14a6 6 0 0012 0c0-4-6-11.5-6-11.5z"/></svg></div>
+          <h3>Leak detection &amp; repair</h3>
+          <p>Pipes, fixtures, and faucets. We find where it's actually coming from before we fix it.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M10 8h4M10 12h4"/></svg></div>
+          <h3>Water heater service</h3>
+          <p>Troubleshooting, repair, and new installs — gas or electric.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M14 7l3 3-7 7-3-3z"/><path d="M5 19l1.5-4L9 17.5z"/></svg></div>
+          <h3>General repairs &amp; installs</h3>
+          <p>Anything else plumbing-related — ask us, and if we can't help, we'll say so straight away.</p>
+        </div>
+        <div class="service-card" style="display:flex; flex-direction:column; justify-content:center; background:transparent; border-style:dashed;">
+          <p style="margin:0; color:var(--ink-soft);">Not sure what you need? Call and describe the problem — we'll tell you honestly what it'll take to fix it.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="section-head">
+        <div class="eyebrow">From Burnaby homeowners</div>
+        <h2>What people say after we've been out.</h2>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <span class="stars">
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          </span>
+          <p class="quote">Called them for a plumbing problem and they sorted it right away — solid team, would call again.</p>
+          <div class="who">Prakash B. · Google review</div>
+        </div>
+        <div class="review-card">
+          <span class="stars">
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          </span>
+          <p class="quote">Fast response and genuinely professional — my go-to plumber in Burnaby now.</p>
+          <div class="who">Uday R. · Google review</div>
+        </div>
+        <div class="review-card">
+          <span class="stars">
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          </span>
+          <p class="quote">Had a leak come up out of nowhere — they showed up quickly and had it fixed the same day.</p>
+          <div class="who">Taydin R. · Google review</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="about">
+        <div>
+          <div class="eyebrow">Why Burnaby calls us</div>
+          <h2 style="font-size:clamp(24px,3vw,32px);">Local, available, and straightforward about pricing.</h2>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg>Answering calls 24 hours a day, including weekends and holidays.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M3 11l9-8 9 8v9a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Based right in Burnaby — we know the neighbourhoods and the older plumbing that comes with them.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Clean, tidy work — reviewers consistently mention how tidy we leave the job site.</li>
+          </ul>
+        </div>
+        <div class="about-card">
+          <div class="eyebrow">Google rating</div>
+          <div class="big-rating">5.0</div>
+          <div class="stars">
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          </div>
+          <p style="color:var(--ink-soft); font-size:14.5px; margin-top:6px;">Based on 43 reviews</p>
+          <div style="border-top:1px solid var(--line); margin-top:18px; padding-top:18px; font-size:14.5px; color:var(--ink-soft);">
+            4723 Kingsway<br>Burnaby, BC V5H 2C3
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="cta-band">
+        <div>
+          <h2>Got a plumbing problem right now?</h2>
+          <p>Call NorthStar Plumbing — we answer around the clock.</p>
+        </div>
+        <a class="call-pill" href="tel:12508164277">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          (250) 816-4277
+        </a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>NorthStar Plumbing</h4>
+        <div>4723 Kingsway</div>
+        <div>Burnaby, BC V5H 2C3</div>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:12508164277">(250) 816-4277</a>
+        <div>Open 24 hours</div>
+      </div>
+      <div class="footer-col">
+        <h4>Service area</h4>
+        <div>Burnaby &amp; the Lower Mainland</div>
+      </div>
+    </div>
+    <div class="footer-credit">
+      © 2026 NorthStar Plumbing. All rights reserved. · Site by <a href="#">CloudlinerX</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
